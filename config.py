@@ -11,7 +11,7 @@ class Config:
     APP = None
     SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
     if SQLALCHEMY_DATABASE_URI is None:
-        SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://teste:teste=@localhost:3306/flask_dashboard'
+        SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://usuario:senha@127.0.0.1:3306/database'
 
 
 class DevelopmentConfig(Config):
