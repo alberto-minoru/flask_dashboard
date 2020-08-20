@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, request, Response
 from admin.Admin import start_views
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
+import json
+import controllers as ctrl
 
 
 def create_app(config):
@@ -27,8 +29,15 @@ def create_app(config):
         # response.header.add('Access-Control-Allow-Origin', '*')
         # response.header.add('Access-Control-Allow-Headers', 'Content-Type')
         # response.header.add('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS')
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, PUT, POST, DELETE, OPTIONS'
         return response
 
-    @app.route('/')
-    def index():
-        return 'oi'
+    @app.route('/report', methods=['GET', 'POST'])
+    def report():
+        state = request.form['state']
+        disease = request.form['disease']
+        patients = ctrl.reportByState(state, disease)
+
+        return Response(json.dumps(patients, ensure_ascii=False), mimetype='application/json'), 200, {}
