@@ -22,11 +22,11 @@ class HomeView(AdminIndexView):
     def is_accessible(self):
         return True
 
-    # def inaccessible_callback(self, name, **kwargs):
-    #     if current_user.is_authenticated:
-    #         return redirect('/admin')
-    #     else:
-    #         return redirect('/login')
+    def inaccessible_callback(self, name, **kwargs):
+        if current_user.is_authenticated:
+            return redirect('/admin')
+        else:
+            return redirect('/login')
 
 
 class UserView(ModelView):

@@ -1,4 +1,5 @@
 from model import *
+from sqlalchemy import or_
 
 
 def reportByState(state=None, disease=None):
@@ -16,3 +17,23 @@ def reportByState(state=None, disease=None):
         'data': str(patient[1]),
         'state': State.query.filter_by(id=patient[2]).first().name,
     } for patient in patients]
+
+
+def login(email, password):
+    try:
+        user = User.query.filter(or_(User.email==email, User.username==email)).first()
+        if user:
+            result = user.verify_password(password, user.password)
+            if result:
+                return user
+    except Exception as e:
+        print(e)
+
+    return None
+
+
+def getUserById(id):
+    try:
+        return User.query.filter_by(id=id).first()
+    except:
+        return None
