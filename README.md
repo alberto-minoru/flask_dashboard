@@ -31,7 +31,7 @@ As seguintes ferramentas foram usadas na construção deste projeto:
 Use o gerênciador de pacotes [pip](https://pip.pypa.io/en/stable/) para instalar todas as dependências necessárias que estão no arquivo requirements.txt.
 
 ```bash
-pip install -r requirements.txt.
+pip install -r requirements.txt
 ```
 
 ## Executar
