@@ -5,7 +5,7 @@ Ainda precisa de ajustes e melhorias, e não chega aos pés do projeto demonstra
 
 🚧 **Em construção...** 🚧 
 
-![Tela](https://github.com/alberto-minoru/flask_dashboard/tree/master/static/imgs/Tela.png)
+![Tela](https://github.com/alberto-minoru/flask_dashboard/blob/master/static/imgs/Tela.png)
 
 Tabela de conteudos
 =================
