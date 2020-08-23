@@ -44,7 +44,7 @@ Por exemplo, basta digitar os seguintes comandos em um terminal de um sistema Li
 ```bash
 export SECRET='f0aa2c733b03dabf68135fae89273149'
 export FLASK_ENV='production'
-export SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://usuario:senha@127.0.0.1:3306/database'
+export SQLALCHEMY_DATABASE_URI='mysql+mysqlconnector://usuario:senha@127.0.0.1:3306/database'
 ```
 
 Ou você poderá ajustar tudo diretamente no arquivo config.py
